@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block training_block %}
+    {% if "строитель" in profession or ("инженер" in profession) %}
+        <h2>Инженерные тренажеры</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=d0c79a3db370207e5f3951c933746f52_l-4571839-images-thumbs&n=13" alt="Нету">
+    {% else %}
+        <h2>Научные симуляторы</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=5ac3e6deedd6c8d87160f610cc5ad8cc_sr-9853874-images-thumbs&n=13" alt="Нету">
+    {% endif %}
+{% endblock %}
