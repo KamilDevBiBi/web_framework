@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block list %}
+    {% if list_type == "ul" %}
+        <ul>
+            {% for name in ["пилот", "строитель", "врач", "штурман"] %}
+                <li> {{name}}</li>
+            {% endfor %}
+        </ul>
+    {% elif list_type == "ol" %}
+        <ol>
+            {% for name in ["пилот", "строитель", "врач", "штурман"] %}
+                <li> {{name}}</li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <h1>Неверный параметр в адресной строке</h1>
+    {% endif %}
+{% endblock %}
