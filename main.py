@@ -38,5 +38,10 @@ def login_url():
     form = LoginForm()
     return render_template("login.html", form=form, title="Аварийный доступ")
 
+@app.route("/distributions")
+def url6():
+    astronaut_names = ["Степан Курагин", "Давлетшин Аркадий", "Космостар Евгений", "Отличнев Гусейн"]
+    return render_template("distribution.html", names=astronaut_names)
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port="8080")

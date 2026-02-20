@@ -2,7 +2,9 @@ h4 {
     color: brown;
     margin-left: 20px;
 }
-
+h2{
+    text-align: center;
+}
 .row-items{
     display: flex;
     align-items: center;
