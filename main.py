@@ -1,6 +1,9 @@
 from flask import Flask, render_template
+from forms import LoginForm
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = "example123456"
+
 
 @app.route("/index/<title>")
 @app.route("/<title>")
@@ -29,6 +32,11 @@ def url4():
     params["ready"] = True
 
     return render_template("auto_answer.html", **params)
+
+@app.route("/login")
+def login_url():
+    form = LoginForm()
+    return render_template("login.html", form=form, title="Аварийный доступ")
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port="8080")
