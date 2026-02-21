@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Степан",
+        "surname": "Курагин",
+        "img_url": "https://avatars.mds.yandex.net/i?id=187c2c78a91baf7b80baf183ce3f66afa6794f93-5916663-images-thumbs&n=13",
+        "job": "Специалист по починке межгалактических порталов"
+    },
+    {
+        "name": "Аркадий",
+        "surname": "Давлетшин",
+        "img_url": "https://avatars.mds.yandex.net/i?id=c84c4e2cdbf4bf955fed8b23e8a9db789ad7be28-5373299-images-thumbs&n=13",
+        "job": "Разработчик ПО для умного чайника"
+    },
+    {
+        "name": "Евгений",
+        "surname": "Космотар",
+        "img_url": "https://avatars.mds.yandex.net/i?id=9d9787c194d77a2d5802f956dcedadf62d1a0b44-6339443-images-thumbs&n=13",
+        "job": "Механик двигателя воздушно-спускового аппарата"
+    },
+    {
+        "name": "Гусейн",
+        "surname": "Отличнев",
+        "img_url": "https://avatars.mds.yandex.net/i?id=9fead184862da3e5469f8bd7738cbe81e5444d86-11004510-images-thumbs&n=13",
+        "job": "Предприниматель, инвестор, миллионер, плейбой"
+    }
+]

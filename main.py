@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, url_for
 from forms import *
+import json
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "example123456"
@@ -58,6 +59,13 @@ def url8():
         galery_form.img_file.data.save("static/" + filename)
         user_images.append(url_for("static", filename=filename))
         return render_template("galery.html", form=galery_form, images=user_images)
+
+@app.route("/member")
+def url9():
+    with open("templates/members.json", encoding="utf-8") as f:
+        members = json.load(f)
+    print(members)
+    return render_template("members.html", members=members)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port="8080")
