@@ -9,3 +9,38 @@ h2{
     display: flex;
     align-items: center;
 }
+
+table {
+    width: 100%;
+}
+
+th {
+    width: 50%;
+    height: 200px;
+}
+img{
+    width: 100%;
+}
+
+.rect {
+    width: 100%;
+    height: 100%;
+}
+.red{
+    background-color: red;
+}
+.red-baby{
+    background-color: rgba(255, 0, 0, 0.677);
+}
+.blue{
+    background-color: blue;
+}
+.blue-baby{
+    background-color: rgba(0, 0, 255, 0.6);
+}
+
+thead th {
+    background-color: rgb(171, 171, 171);
+    text-align: center;
+    height: 20px;
+}

@@ -43,5 +43,9 @@ def url6():
     astronaut_names = ["Степан Курагин", "Давлетшин Аркадий", "Космостар Евгений", "Отличнев Гусейн"]
     return render_template("distribution.html", names=astronaut_names)
 
+@app.route("/table/<sex>/<int:age>")
+def url7(sex, age):
+    return render_template("kaut.html", sex=sex, age=age)
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port="8080")

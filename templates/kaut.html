@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block kaut %}
+    <h2>Оформление каюты</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Цвет стен</th>
+                <th>Эмблема</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    {% if sex == "female" %}
+                        {% if age < 21 %}
+                            <div class="rect red-baby"></div>
+                        {% else %}
+                            <div class="rect red"></div>
+                        {% endif %}
+                    {% elif sex == "male" %}
+                        {% if age < 21 %}
+                            <div class="rect blue-baby"></div>
+                        {% else %}
+                            <div class="rect blue"></div>
+                        {% endif %}
+                    {% endif %}
+                </th>
+                <th>
+                    {% if age < 21 %}
+                        <img src="https://avatars.mds.yandex.net/i?id=ee5005e8666b73bee39f40b5703be917fe78f3e3-12994680-images-thumbs&n=13" alt="">
+                    {% else %}
+                        <img src="https://avatars.mds.yandex.net/i?id=012960ab8ea9fbea29ec984875eadc97bc574bbd-12421362-images-thumbs&n=13" alt="">
+                    {% endif %}
+                </th>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
