@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block galery %}
+    <h2>Пейзажи Марса</h2>
+    {% for file_url in images %}
+        <img src={{file_url}} alt="">
+    {% endfor %}
+    <form method="post" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.img_file.label }} <br>
+            {{ form.img_file() }}
+            {% for error in form.img_file.errors %}
+                <div class="error error-danger">{{ error }}</div>
+            {% endfor %}
+        </div>
+        {{ form.submit(type="submit", class="btn btn-primary" )}}
+    </form>
+{% endblock %}

@@ -1,9 +1,10 @@
-from flask import Flask, render_template
-from forms import LoginForm
+from flask import Flask, render_template, request, url_for
+from forms import *
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "example123456"
 
+user_images = ["https://avatars.mds.yandex.net/i?id=8f5146ec20dc94a0d94b3f94f60524d14faf625a-11462831-images-thumbs&n=13"]
 
 @app.route("/index/<title>")
 @app.route("/<title>")
@@ -35,8 +36,8 @@ def url4():
 
 @app.route("/login")
 def login_url():
-    form = LoginForm()
-    return render_template("login.html", form=form, title="Аварийный доступ")
+    login_form = LoginForm()
+    return render_template("login.html", form=login_form, title="Аварийный доступ")
 
 @app.route("/distributions")
 def url6():
@@ -46,6 +47,17 @@ def url6():
 @app.route("/table/<sex>/<int:age>")
 def url7(sex, age):
     return render_template("kaut.html", sex=sex, age=age)
+
+@app.route("/galery", methods=["GET", "POST"])
+def url8():
+    galery_form = GaleryForm()
+    if request.method == "GET":
+        return render_template("galery.html", form=galery_form, images=user_images)
+    elif request.method == "POST":
+        filename = galery_form.img_file.data.filename
+        galery_form.img_file.data.save("static/" + filename)
+        user_images.append(url_for("static", filename=filename))
+        return render_template("galery.html", form=galery_form, images=user_images)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port="8080")
